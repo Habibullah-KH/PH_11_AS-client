@@ -56,3 +56,13 @@
 
    }
 } */
+
+
+.list {
+  font-weight: 500;
+  transition: ease-in-out 0.3s;
+}
+
+.list:hover {
+  text-decoration: underline;
+}

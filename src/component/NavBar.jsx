@@ -1,15 +1,18 @@
-import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { FiXSquare } from "react-icons/fi";
+import AuthContext from "../context/AuthContext";
 
 
 const NavBar = () => {
     const [click, setClick] = useState(false);
-    // const [visit, setVisit] = useState(false);
+    const [visit, setVisit] = useState(false);
     const [theme, setTheme] = useState(
         localStorage.getItem("theme") || "light"
       );
+
+      const {user, logOut} = useContext(AuthContext);
 
     useEffect(() => {
         localStorage.setItem("theme", theme);
@@ -28,10 +31,14 @@ const NavBar = () => {
         <>
         <div className="flex justify-between items-center p-4 backdrop-blur-3xl bg-opacity-80 w-full">
             {/* Brand Logo and name */}
+           <Link to={'/'}> 
             <div className="flex justify-center items-center">
+               
             <img className="w-5 h-5 mr-1 md:w-10 md:h-10" src="/logo_xl.png"/>
+               
             <h2 className="font-bold md:text-xl">PolyLingua</h2>
-            </div>
+            </div> 
+            </Link>
 
 {/* Navigative buttons */}
  <div className={`hidden lg:flex lg:gap-3`} >
@@ -73,7 +80,7 @@ className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
 </button>
 {/*Login equepment and Login info*/}
 
-{/* {
+{
     user&&user?.email? 
 <div className="flex items-center">
 
@@ -98,9 +105,9 @@ className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
 </div>
     :
 <div>
-    <NavLink to="/login" className={ ({isActive}) => isActive? "btn btn-outline" : "btn"}>Login</NavLink>
+    <NavLink to="/login" className={({isActive}) => isActive?"btn btn-outline" : "btn"}>Login</NavLink>
 </div>
-} */}
+}
 
             {/*Dropdown btn*/}
             <div className="lg:hidden" onClick={handleDropdown}>      
