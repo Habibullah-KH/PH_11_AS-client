@@ -1,3 +1,4 @@
+import FirstExtraSection from "../component/FirstExtraSection";
 import LanguageCard from "../component/LanguageCard";
 import Slider from "../component/Slider";
 import Stat from "../component/Stat";
@@ -21,7 +22,10 @@ const Home = () => {
     <LanguageCard/>
 </div>
 
-
+{/* Extra section one */}
+<div className="mt-20">
+    <FirstExtraSection/>
+</div>
         </div>
         </>
     );
