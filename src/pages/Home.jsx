@@ -1,5 +1,6 @@
 import FirstExtraSection from "../component/FirstExtraSection";
 import LanguageCard from "../component/LanguageCard";
+import SecExtraSection from "../component/SecExtraSection";
 import Slider from "../component/Slider";
 import Stat from "../component/Stat";
 
@@ -26,6 +27,13 @@ const Home = () => {
 <div className="mt-20">
     <FirstExtraSection/>
 </div>
+
+{/* Extra section two */}
+<div className="mt-20">
+    <SecExtraSection/>
+</div>
+
+
         </div>
         </>
     );
