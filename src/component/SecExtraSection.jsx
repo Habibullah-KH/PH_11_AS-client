@@ -6,8 +6,8 @@ const SecExtraSection = () => {
         <div className="my-10">
        {/* top titel */}
        <div className="text-center bg-[#ffd36d] py-28 my-10">
-        <h2 className="font-bold text-4xl text-[2.5xl]">Lessons you’ll love. Guaranteed.</h2>
-        <p>Try another tutor for free if you’re not satisfied.</p>
+        <h2 className="font-bold text-4xl text-[2.5xl] text-black">Lessons you’ll love. Guaranteed.</h2>
+        <p className="text-black">Try another tutor for free if you’re not satisfied.</p>
        </div>
 
        {/* card section */}
@@ -22,7 +22,7 @@ const SecExtraSection = () => {
 
                {/* text-container */}
                <div>
-       <h2 className="text-3xl md:text-[2.5rem] font-bold mb-3 text-black">
+       <h2 className="text-3xl md:text-[2.5rem] font-bold mb-3">
        Become a tutor
        </h2>
        <p>

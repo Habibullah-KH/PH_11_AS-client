@@ -8,7 +8,7 @@ const FirstExtraSection = () => {
     <div className="mt-10 flex flex-wrap justify-center gap-5">
 
         <div className="max-w-80 h-[30rem] border-2 p-2 rounded-sm">{/* first card */}
-            <h3 className="p-4 border w-fit font-bold text-xl bg-lime-400 rounded-sm">1</h3>
+            <h3 className="p-4 border w-fit font-bold text-xl bg-lime-400 rounded-sm text-black">1</h3>
 
             <div className="mt-10">
                 <h4 className="font-bold text-3xl md:text-[2rem]">Find your tutor.</h4>
@@ -22,7 +22,7 @@ const FirstExtraSection = () => {
         {/* card end */}
 
         <div className="max-w-80 h-[30rem] border-2 p-2 rounded-sm">{/* sec card */}
-            <h3 className="p-4 border w-fit font-bold text-xl bg-yellow-400 rounded-sm">2</h3>
+            <h3 className="p-4 border w-fit font-bold text-xl bg-yellow-400 rounded-sm text-black">2</h3>
 
             <div className="mt-10">
                 <h4 className="font-bold text-3xl md:text-[2rem]">Start learning.</h4>
@@ -36,7 +36,7 @@ const FirstExtraSection = () => {
         {/* card end */}
 
         <div className="max-w-80 h-[30rem] border-2 p-2 rounded-sm">{/* thard card */}
-            <h3 className="p-4 border w-fit font-bold text-xl bg-orange-400 rounded-sm">3</h3>
+            <h3 className="p-4 border w-fit font-bold text-xl bg-orange-400 rounded-sm text-black">3</h3>
 
             <div className="mt-10">
                 <h4 className="font-bold text-3xl md:text-[2rem]">Speak. Read. Write. Repeat.</h4>

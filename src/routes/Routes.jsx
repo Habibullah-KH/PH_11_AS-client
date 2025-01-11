@@ -5,6 +5,7 @@ import {
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import SignIn from '../pages/SignIn';
+import AddTutorial from '../pages/AddTutorial';
 
   const Routes = createBrowserRouter([
 {
@@ -22,6 +23,10 @@ import SignIn from '../pages/SignIn';
     {
      path: "/signin",
      element: <SignIn/>  
+    },
+    {
+     path: "/addTutorials",
+     element: <AddTutorial/>  
     },
   ]
 },
