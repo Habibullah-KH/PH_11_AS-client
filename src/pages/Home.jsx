@@ -1,5 +1,5 @@
 import FirstExtraSection from "../component/FirstExtraSection";
-import LanguageCard from "../component/LanguageCard";
+import LanguageCard from "../component/LanguageCard/LanguageCard";
 import SecExtraSection from "../component/SecExtraSection";
 import Slider from "../component/Slider";
 import Stat from "../component/Stat";

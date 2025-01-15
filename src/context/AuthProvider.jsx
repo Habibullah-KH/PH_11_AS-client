@@ -2,10 +2,16 @@ import { useEffect, useState } from "react";
 import AuthContext from "./AuthContext";
 import {createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import auth from "../Firebase/Firebase.Config";
+import Loding from "../component/Loding";
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loding, setLoding] = useState(true);
     const [success, setSuccess] = useState(false);
+
+    if(loding){
+      <Loding/>
+    }
+
 
     //* signin or create new user 
     const createUser = (email, password) => {

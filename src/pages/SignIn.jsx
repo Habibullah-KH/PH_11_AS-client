@@ -103,8 +103,19 @@ const SignIn = () => {
      return (
          <>
  <div className="hero min-h-screen">
-   <div className="hero-content flex-col lg:flex-row-reverse  bg-[url('/doodle.png')] bg-opacity-45 border-2 rounded-3xl shadow-xl ">
-     <div className="text-center lg:text-left shadow-xl rounded-2xl p-5 backdrop-blur-lg">
+
+   <div 
+   className="
+   relative hero-content flex-col lg:flex-row-reverse bg-[#ffd36d]
+   border-2 rounded-3xl shadow-xl ">
+
+   <div
+ className="absolute inset-0 bg-[url('/TPdoodle.png')] bg-center opacity-35 w-full pointer-events-none rounded-2xl"
+ aria-hidden="true"
+></div>
+
+
+     <div className="text-center lg:text-left shadow-2xl rounded-2xl p-5 backdrop-blur-sm text-black">
        <h1 className="text-2xl md:text-5xl font-bold w-full ">Sign in now!</h1>
      </div>
  
