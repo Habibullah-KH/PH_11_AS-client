@@ -29,7 +29,7 @@ const NavBar = () => {
       
     return (
         <>
-        <div className="flex justify-between items-center p-4 backdrop-blur-3xl bg-opacity-80 w-full">
+        <div className=" flex justify-between items-center p-4 backdrop-blur-3xl bg-opacity-80 w-full">
             {/* Brand Logo and name */}
            <Link to={'/'}> 
             <div className="flex justify-center items-center">
@@ -138,35 +138,35 @@ className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
             }
 
 
-<div className={`absolute duration-700 backdrop-blur-2xl bg-[#ffd36d] py-5 bg-opacity-90 y-5
+<div className={`absolute duration-700 backdrop-blur-2xl bg-[#858585] py-5 bg-opacity-90 y-5
     ${click? 'top-[5.5rem]':'-top-96'} 
     left-0 right-0 shadow-sm z-10 overflow-hidden text-center mx-auto items-center
-    flex flex-col md:flex-row justify-center gap-2 md:p-10
+    flex flex-col md:flex-row justify-center gap-2 md:p-10 z-999
     `} >
 
-<NavLink 
+<NavLink to={'/'}
 className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
-    <button className="text-black" type="button">Home</button>
+    <button className="w-[8rem]" type="button">Home</button>
 </NavLink>
 
-<NavLink to={'/addTutorials'}
+<NavLink  to={'/addTutorials'}
 className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
-    <button className="text-black" type="button">Add Tutorials</button>
+    <button className="w-[8rem]" type="button">Add Tutorials</button>
 </NavLink>
 
 <NavLink  to={'/find-tutors'}
 className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
-    <button className="text-black" type="button">Find tutors</button>
+    <button className="w-[8rem]" type="button">Find tutors</button>
 </NavLink>
 
 <NavLink  
 className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
-    <button className="text-black" type="button">My Tutorials</button>
+    <button className="w-[8rem]" type="button">My Tutorials</button>
 </NavLink>
 
 <NavLink 
 className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
-    <button className="text-black" type="button">My booked tutors</button>
+    <button className="w-[8rem]" type="button">My booked tutors</button>
 </NavLink>
 </div>
             </div>

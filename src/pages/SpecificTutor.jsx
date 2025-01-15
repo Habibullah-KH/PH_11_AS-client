@@ -38,8 +38,8 @@ if(card.length == 0){
     return (
         <>  
 <div className="text-center bg-[#ffd36d] py-28 my-10 ">
-        <h2 className="font-bold text-4xl text-[2.5xl] text-black">
-        Online tutors & teachers for private lessons
+        <h2 className="font-bold text-4xl text-[2.5xl] text-black ">
+        Online <span className="text-[3.5rem] text_strok_i">{language}</span> tutors & teachers for private lessons
         </h2>
         <p className="text-black">
         Learn faster with your best language tutor.

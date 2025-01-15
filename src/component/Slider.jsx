@@ -3,7 +3,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const Slider = () => {
     return (
         <>
-        <div className="carousel w-full">
+        <div className="carousel w-full ">
   <div id="slide1" className="carousel-item relative w-full ">
 
   <div className="flex flex-col md:flex-row items-center justify-center xl:gap-20 lg:gap-10 gap-3 w-full py-20 px-2 bg-[#ffd166]">
@@ -23,7 +23,7 @@ language tutor.<br/>
         </div>
     </div>
 
-    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between ">
       <a href="#slide3" className="btn btn-circle bg-transparent">❮</a>
       <a href="#slide2" className="btn btn-circle bg-transparent">❯</a>
     </div>

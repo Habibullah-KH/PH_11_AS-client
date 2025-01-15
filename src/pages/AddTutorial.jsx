@@ -205,7 +205,7 @@ ref={ratingRef}
 
 
 {/* Price */}
-<div className="form-control relative">
+<div className="form-control">
   <label className="label">
     <span className="label-text text-md text-black font-bold md:text-xl">Price</span>
   </label>

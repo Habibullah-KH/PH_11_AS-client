@@ -24,7 +24,7 @@ useEffect(()=>{
       };
   
       fetchData();
-    }, [language, card]);
+    }, [language]);
 
     return (
         <>  
