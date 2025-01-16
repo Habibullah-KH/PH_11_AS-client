@@ -1,10 +1,18 @@
 import { IoIosStar } from "react-icons/io";
 import PropTypes from 'prop-types';
+import { useNavigate } from "react-router-dom";
 
 
 const TutorialCards = ({data}) => {
-    // console.log(data);
-    const {name, image, description, language, price, review} = data;
+    const {name, image, description, language, price, review, _id} = data;
+    const naviget = useNavigate();
+    const handleDetails = (e) => {
+      console.log(e);
+      naviget(`/tutor/${e}`)
+    }
+
+
+
     return (
         <>
   <div className="card card-side bg-base-100 shadow-xl max-w-[620px] border-2 p-2 grid grid-cols-5">
@@ -18,7 +26,8 @@ const TutorialCards = ({data}) => {
 
 <div className="flex items-center justify-between">
 
-<div>{/* user name and language name */}
+{/* user name and language name */}
+<div>
  <h2 className="card-title">{name}</h2>
  <p 
     className={`
@@ -38,7 +47,8 @@ const TutorialCards = ({data}) => {
 </p>
 </div>
 
-<div className="flex gap-4 text-xl">{/* revew and price */}
+{/* revew and price */}
+<div className="flex gap-4 text-xl">
 <p className="flex items-center"><IoIosStar />{review}</p>
 <p>${price}</p>
 </div>
@@ -46,7 +56,9 @@ const TutorialCards = ({data}) => {
 
     <p>{description}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-outline">Details</button>
+      <button
+       onClick={()=>handleDetails(_id)}
+       className="btn btn-outline">Details</button>
     </div>
   </div>
 </div>
@@ -62,6 +74,7 @@ TutorialCards.propTypes = {
         language: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired,
         review: PropTypes.number.isRequired,
+        _id: PropTypes.string.isRequired,
       }).isRequired,
   };
 export default TutorialCards;

@@ -26,7 +26,7 @@ const NavBar = () => {
       const handleDropdown = () => {
         setClick(!click);
       };
-      
+
     return (
         <>
         <div className=" flex justify-between items-center p-4 backdrop-blur-3xl bg-opacity-80 w-full">
@@ -115,12 +115,12 @@ className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
     </div>
 
     <div className={`
-    duration-700 rounded-lg
+    duration-700 rounded-lg bg-yellow-200 opacity-90
     p-5 border-2 border-gray-300 text-sm right-5
     absolute ${visit? 'top-20' : '-top-60'}
     `}>
 
-        <p className="text-ld">{user?.displayName}</p>
+        <p className="text-lg text-black">{user?.displayName}</p>
     </div>
 
     <NavLink onClick={logOut} className={ ({isActive}) => isActive? "btn btn-outline" : "btn"}>LogOut</NavLink>

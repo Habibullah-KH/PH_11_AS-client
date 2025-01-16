@@ -114,7 +114,7 @@ const AddTutorial = () => {
                      Sign up to start tutoring online with Preply.</p>
             </div>
 
-            {/* Form start */}
+{/* Form start */}
             <form 
             onSubmit={handleSubmit}
             className="

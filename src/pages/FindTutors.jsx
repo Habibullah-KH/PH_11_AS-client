@@ -7,8 +7,6 @@ const FindTutors = () => {
     const [card, setCard]=useState();
     const { language } = useParams();
 useEffect(()=>{
-
-
     const fetchData = async () => {
         try {
           const response = await fetch(
@@ -17,7 +15,6 @@ useEffect(()=>{
           );
           const data = await response.json();
           setCard(data);
-          console.log(card);
         } catch (err) {
           console.error("Error fetching data:", err);
         }
@@ -26,9 +23,11 @@ useEffect(()=>{
       fetchData();
     }, [language]);
 
+
+  
     return (
         <>  
-<div className="text-center bg-[#ffd36d] py-28 my-10">
+<div className="text-center bg-[#ffd36d] py-28 mb-10">
         <h2 className="font-bold text-4xl text-[2.5xl] text-black">
         Online tutors & teachers for private lessons
         </h2>

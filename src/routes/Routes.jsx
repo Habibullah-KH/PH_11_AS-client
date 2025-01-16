@@ -8,6 +8,9 @@ import SignIn from '../pages/SignIn';
 import AddTutorial from '../pages/AddTutorial';
 import FindTutors from '../pages/FindTutors';
 import SpecificTutor from '../pages/SpecificTutor';
+import TutorDetails from '../pages/Tutorial-details/TutorDetails';
+import PrivetRoutes from './PrivetRoutes';
+
 
   const Routes = createBrowserRouter([
 {
@@ -38,6 +41,11 @@ import SpecificTutor from '../pages/SpecificTutor';
      path: "/find-tutors/:language",
      element: <SpecificTutor/>,
     },
+    {
+     path: "/tutor/:details",
+     element: <PrivetRoutes><TutorDetails/></PrivetRoutes>,
+    },
+
   ]
 },
   ]);
