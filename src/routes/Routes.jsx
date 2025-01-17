@@ -10,6 +10,7 @@ import FindTutors from '../pages/FindTutors';
 import SpecificTutor from '../pages/SpecificTutor';
 import TutorDetails from '../pages/Tutorial-details/TutorDetails';
 import PrivetRoutes from './PrivetRoutes';
+import MyBookedTutor from '../pages/MyBookedTutor/MyBookedTutor';
 
 
   const Routes = createBrowserRouter([
@@ -44,6 +45,10 @@ import PrivetRoutes from './PrivetRoutes';
     {
      path: "/tutor/:details",
      element: <PrivetRoutes><TutorDetails/></PrivetRoutes>,
+    },
+    {
+     path: "/myBookedData/:email",
+     element: <PrivetRoutes><MyBookedTutor/></PrivetRoutes>,
     },
 
   ]

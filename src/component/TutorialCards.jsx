@@ -1,4 +1,4 @@
-import { IoIosStar } from "react-icons/io";
+import { FaHeart } from "react-icons/fa";
 import PropTypes from 'prop-types';
 import { useNavigate } from "react-router-dom";
 
@@ -49,7 +49,7 @@ const TutorialCards = ({data}) => {
 
 {/* revew and price */}
 <div className="flex gap-4 text-xl">
-<p className="flex items-center"><IoIosStar />{review}</p>
+<p className="flex items-center"><FaHeart />{review}</p>
 <p>${price}</p>
 </div>
 </div>

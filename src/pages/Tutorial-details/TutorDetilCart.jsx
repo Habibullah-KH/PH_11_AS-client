@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import Loding from "../../component/Loding";
-import { IoIosStar } from 'react-icons/io';
+import { FaHeart } from "react-icons/fa";
+
 import { useContext } from 'react';
 import AuthContext from '../../context/AuthContext';
 import { toast, ToastContainer } from 'react-toastify';
@@ -20,16 +21,24 @@ const TutorDetilCart = ({ data }) => {
     const userData = {
     tutorId: _id,
     tutorEmail:email,
-    Image:image,
-    language:language,
-    Pirce:price,
-    email:user,
+    name,
+    image,
+    language,
+    price,
+    email:user.email,
  }
 
 
 
  const handleBook = () => {
     console.log(userData);
+
+    if(user?.email === email?.toLowerCase()){
+        console.log('helo');
+        return toast.error('Action not permitted')
+    }
+console.log(user.email);
+console.log(email);
      //* send data to backend
      fetch(`${import.meta.env.VITE_SERVER_url}/bookData`, {
         method: 'POST',
@@ -38,7 +47,12 @@ const TutorDetilCart = ({ data }) => {
         },
         body: JSON.stringify(userData)
      })
-     .then(res=>res.json())
+     .then(async (res) => {
+        if (!res.ok) {
+          const errorData = await res.json();
+          throw new Error(errorData.message || 'Something went wrong');
+        }
+        return res.json();})
      .then(data=>{
         if(data){
             toast.success('Booked success')
@@ -49,8 +63,13 @@ const TutorDetilCart = ({ data }) => {
         }
      })
      .catch(err => {
-        console.error(`error from userData route:`,err),
-        toast.error(<PiSmileySad />,`userData error:${err.massage}`)
+        
+        toast.error(
+            <>
+              <PiSmileySad /> {err.message}
+            </>
+          );
+          
      })
  }
 
@@ -76,7 +95,7 @@ const TutorDetilCart = ({ data }) => {
                
                {/* revew and price */}
                <div className="flex gap-4 text-xl">
-               <p className="flex items-center"><IoIosStar />{review}</p>
+               <p className="flex items-center"><FaHeart />{review}</p>
                <p>${price}</p>
                </div>
                <div>

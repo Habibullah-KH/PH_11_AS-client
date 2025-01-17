@@ -63,7 +63,7 @@ className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
     <button type="button">My Tutorials</button>
 </NavLink>
 
-<NavLink 
+<NavLink to={'/myBookedData/:email'}
 className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
     <button type="button">My booked tutors</button>
 </NavLink>
@@ -109,7 +109,7 @@ className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
 
 
     <div onClick={()=>setVisit(!visit)}
-     className="text-sm flex items-center gap-2 mx-auto p-3">
+     className="text-sm flex items-center gap-2 mx-auto p-3 hidden lg:block">
         <img  src={user?.photoURL}
         className="h-8 w-8 rounded-full border-2 border-gray-500"/>
     </div>
@@ -139,10 +139,21 @@ className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
 
 
 <div className={`absolute duration-700 backdrop-blur-2xl bg-[#858585] py-5 bg-opacity-90 y-5
-    ${click? 'top-[5.5rem]':'-top-96'} 
+    ${click? 'top-[5.5rem]':'-top-[100rem]'} 
     left-0 right-0 shadow-sm z-10 overflow-hidden text-center mx-auto items-center
-    flex flex-col md:flex-row justify-center gap-2 md:p-10 z-999
+    flex flex-col flex-wrap md:flex-row justify-center gap-2 md:p-10 z-999
     `} >
+        <div className=" bg-white p-2 rounded-xl">
+         <div>
+             <h4 className="font-bold">Account info:</h4>
+         </div>
+        <div className="flex items-center gap-3">
+        <img 
+         className="rounded-full w-10 h-10"
+         src={user?.photoURL}/>
+          <p className="text-lg text-black">{user?.displayName}</p>
+        </div>
+        </div>
 
 <NavLink to={'/'}
 className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
@@ -164,7 +175,7 @@ className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
     <button className="w-[8rem]" type="button">My Tutorials</button>
 </NavLink>
 
-<NavLink 
+<NavLink to={'/myBookedData/:email'}
 className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
     <button className="w-[8rem]" type="button">My booked tutors</button>
 </NavLink>

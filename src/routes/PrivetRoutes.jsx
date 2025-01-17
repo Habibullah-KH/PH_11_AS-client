@@ -2,7 +2,7 @@ import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
 import Loding from "../component/Loding";
-
+import PropTypes from "prop-types";
 const PrivetRoutes = ({ children }) => {
   const { user, loding } = useContext(AuthContext);
 
@@ -21,5 +21,7 @@ if (loding) {
     </>
   );
 };
-
+PrivetRoutes.propTypes = {
+    children: PropTypes.node.isRequired,
+  };
 export default PrivetRoutes;
