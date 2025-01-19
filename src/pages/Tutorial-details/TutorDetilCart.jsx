@@ -87,17 +87,12 @@ console.log(email);
            <img
            className='rounded-xl'
                src={image}
-               alt='profile'
+               alt='tutorial'
            />
+       </div>
+       <div className="card-body">
 
            <div>
-
-               
-               {/* revew and price */}
-               <div className="flex gap-4 text-xl">
-               <p className="flex items-center"><FaHeart />{review}</p>
-               <p>${price}</p>
-               </div>
                <div>
                 <p 
                    className={`
@@ -115,13 +110,18 @@ console.log(email);
                
                    {language}
                </p>
-               </div>
-               
+               </div>   
            </div>
-       </div>
-       <div className="card-body">
+
            <h2 className="card-title">{name}</h2>
            <p>{description}</p>
+           
+            {/* revew and price */}
+            <div className="flex gap-4 text-xl">
+            <p className="flex gap-2 items-center"><FaHeart />{review}</p>
+            <p>${price}</p>
+            </div>
+
            <div className="card-actions justify-end">
                <button
                onClick={()=>handleBook()}

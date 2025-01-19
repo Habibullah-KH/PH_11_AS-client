@@ -79,13 +79,13 @@ const CardMyBookedTutor = ({ data }) => {
 
 CardMyBookedTutor.propTypes = {
   data: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    language: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    review: PropTypes.number.isRequired,
-    tutorId: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      language: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      _id: PropTypes.string.isRequired,
   }).isRequired,
 };
+
 
 export default CardMyBookedTutor;

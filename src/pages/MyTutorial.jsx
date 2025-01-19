@@ -1,17 +1,16 @@
 import { useContext, useEffect, useState } from "react";
-import AuthContext from "../../context/AuthContext";
-import CardMyBookedTutor from "./CardMyBookedTutor";
-import NoDataFound from "../NoDataFound";
-import Loding from "../../component/Loding";
+import Loding from "../component/Loding";
+import NoDataFound from "./NoDataFound";
+import AuthContext from "../context/AuthContext";
+import CardMyTutorial from "./CardMyTutorial";
 
-const MyBookedTutor = () => {
+const MyTutorial = () => {
     const {user, loding, setLoding} = useContext(AuthContext);
     const [userData, setUserData]=useState(null);
     useEffect(()=>{
         const fetchData = async() => {
             try{
                 const res = await fetch(`${import.meta.env.VITE_SERVER_url}/mytutorial/${user.email}`);
-                console.log(user.email)
                 const data = await res.json();
                 setLoding(false)
                 setUserData(data);
@@ -22,21 +21,21 @@ const MyBookedTutor = () => {
             }
         }
         fetchData();
-    },[setLoding, user.email])
+    },[user.email])
     
     if(loding){
         <Loding/>
     }
     return (
         <>
-            <div className="text-center bg-[#ffd36d] py-10 mb-10">
+            <div className="text-center bg-[#fdbc78] py-10 mb-10">
                <h2 className="font-bold text-4xl text-[2.5xl] text-black">
-                   Your booked tutorial.
+                   Your tutorials.
                </h2>
            </div>
            {userData && userData.length > 0 ? (
                 userData
-                .map((data, i) => <CardMyBookedTutor key={i} data={data} />)
+                .map((data, i) => <CardMyTutorial key={i} data={data}></CardMyTutorial>)
             ) : (
                 <NoDataFound />
             )}
@@ -44,4 +43,4 @@ const MyBookedTutor = () => {
     );
 };
 
-export default MyBookedTutor;
+export default MyTutorial;

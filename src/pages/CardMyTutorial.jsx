@@ -1,20 +1,10 @@
-import { FaHeart } from "react-icons/fa";
-import PropTypes from 'prop-types';
-import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+import { FaHeart } from "react-icons/fa6";
 
+const CardMyTutorial = ({ data }) => {
+    const {name, image, description, language, price, review} = data;
 
-const TutorialCards = ({data}) => {
-    const {name, image, description, language, price, review, _id} = data;
-    const naviget = useNavigate();
-    const handleDetails = (e) => {
-      console.log(e);
-      naviget(`/tutor/${e}`)
-    }
-
-
-
-    return (
-        <>
+  return (
   <div className="card card-side bg-base-100 shadow-xl max-w-[620px] border-2 p-2 grid grid-cols-5">
   <figure className="col-span-1">
     <img
@@ -55,26 +45,22 @@ const TutorialCards = ({data}) => {
 </div>
 
     <p>{description}</p>
-    <div className="card-actions justify-end">
-      <button
-       onClick={()=>handleDetails(_id)}
-       className="btn btn-outline">Details</button>
-    </div>
   </div>
 </div>
-        </>
-    );
+  );
 };
 
-TutorialCards.propTypes = {
-    data: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        language: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired,
-        review: PropTypes.number.isRequired,
-        _id: PropTypes.string.isRequired,
-      }).isRequired,
-  };
-export default TutorialCards;
+CardMyTutorial.propTypes = {
+  data: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    language: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    review: PropTypes.number.isRequired,
+    _id: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+
+export default CardMyTutorial;

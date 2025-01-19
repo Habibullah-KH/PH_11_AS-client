@@ -38,7 +38,8 @@ useEffect(()=>{
 
 <div className="flex flex-wrap gap-4 justify-center my-20">  
      {
-     card?card.map((data, i) => <TutorialCards key={i} data={data}></TutorialCards>):<Loding/>
+     card && card.length > 0 ? (card.map((data, i) => <TutorialCards key={i} data={data}></TutorialCards>))
+     :<Loding/>
      }
 </div>
 

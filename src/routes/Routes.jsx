@@ -11,6 +11,7 @@ import SpecificTutor from '../pages/SpecificTutor';
 import TutorDetails from '../pages/Tutorial-details/TutorDetails';
 import PrivetRoutes from './PrivetRoutes';
 import MyBookedTutor from '../pages/MyBookedTutor/MyBookedTutor';
+import MyTutorial from '../pages/MyTutorial';
 
 
   const Routes = createBrowserRouter([
@@ -32,7 +33,7 @@ import MyBookedTutor from '../pages/MyBookedTutor/MyBookedTutor';
     },
     {
      path: "/addTutorials",
-     element: <AddTutorial/>  
+     element: <PrivetRoutes><AddTutorial/></PrivetRoutes>   
     },
     {
      path: "/find-tutors",
@@ -49,6 +50,10 @@ import MyBookedTutor from '../pages/MyBookedTutor/MyBookedTutor';
     {
      path: "/myBookedData/:email",
      element: <PrivetRoutes><MyBookedTutor/></PrivetRoutes>,
+    },
+    {
+     path: "/mytutorial/:email",
+     element: <PrivetRoutes><MyTutorial/></PrivetRoutes>,
     },
 
   ]

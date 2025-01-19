@@ -1,13 +1,17 @@
 import { useContext, useRef } from "react";
 import Swal from "sweetalert2";
 import AuthContext from "../context/AuthContext";
+import Loding from "../component/Loding";
 
 const AddTutorial = () => {
     const {user} = useContext(AuthContext);
-    const categoryRef = useRef(null);
+    const languageRef = useRef(null);
     const ratingRef = useRef(null);
-    const processRef = useRef(null);
-    const customizeRef = useRef(null);
+
+
+    if(!user){
+      return <Loding/>
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -16,19 +20,16 @@ const AddTutorial = () => {
     const name = form.get('name');
     const itemName = form.get('item');
     const image = form.get('image');
-    const stockStatus = parseInt(form.get('Stock'));
 
-    const categoryName = categoryRef.current.value;
+    const language = languageRef.current.value;
     const rating = parseFloat(ratingRef.current.value);
-    const processingTime = parseFloat(processRef.current.value);
-    const customization = customizeRef.current.value;
 
     const description = form.get('description');
     const price = parseFloat(form.get('price')); 
     
     const urlRegex = /^https?:\/\/.*$/i;
 
-    const Newequepment = {email, name, itemName, image, description, price, categoryName, rating, processingTime, stockStatus, customization};
+    const tutorialData = {email, name, itemName, image, description, price, language, rating};
 
     if (!urlRegex.test(image)) {
         Swal.fire({
@@ -42,7 +43,7 @@ const AddTutorial = () => {
             if (result.isConfirmed) {
               // console.log("Close button clicked");
             } else if (result.isDismissed) {
-              // console.log("Info button clicked");
+
               window.open('https://www.google.com/search?q=image+hosting+sites+like+imgur&oq=image+host&gs_lcrp=EgZjaHJvbWUqBwgDEAAYgAQyBwgAEAAYgAQyBggBEEUYOTIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIGCAcQRRg90gEIODAyM2owajSoAgCwAgA&sourceid=chrome&ie=UTF-8', '_blank');
             }
       })
@@ -58,39 +59,37 @@ const AddTutorial = () => {
         return;
       }
 
-    if (isNaN(stockStatus) || stockStatus <= 0) {
-    Swal.fire({
-        title: 'Invalid Stock',
-        text: 'Stock must be a positive number.',
-        icon: 'error',
-        confirmButtonText: 'Close'
-    });
-    return;
-}
-// console.log(Newequepment);
-
 //* send data to backend
 
-    fetch('https://ph-10-as-server-three.vercel.app/equipment', {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(Newequepment)
-    })
-    .then(res => res.json())
-    .then(data => {
-        if(data){
-            Swal.fire({
-              title: 'submit success',
-              text: 'Do you want to continue',
-              icon: 'success',
-              confirmButtonText: 'Close'
-            })
-        }
-    })
-    .catch(err => console.log('what is this', err));
+const saveOnDatabase = async() => {
+  try{
+    const res = await fetch(`${import.meta.env.VITE_SERVER_url}/addTutorial`, {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json'
+      },
+      body: JSON.stringify(tutorialData)
+      
+  });
 
+  if (!res.ok) {
+    throw new Error("Failed to update review");
+  }
+     const data = await res.json();
+
+     if(data){
+      Swal.fire({
+        title: 'submit success',
+        text: 'Do you want to continue',
+        icon: 'success',
+        confirmButtonText: 'Close'
+      })
+  }}
+  catch (err) {
+    console.error("Error saveOnDatabase:", err);
+  }
+  }
+saveOnDatabase();
 
 } //!handleSubmit function end
 
@@ -164,7 +163,7 @@ const AddTutorial = () => {
 
  <select
 
-ref={categoryRef}
+ref={languageRef}
     className="text-black py-3 rounded-lg"
 >
     <option value="English">English</option>
@@ -192,14 +191,7 @@ ref={categoryRef}
 ref={ratingRef}
     className="text-black py-3  rounded-lg text-center"
 >
-  <option value="5">5</option>
-  <option value="4.5">4.5</option>
-  <option value="4">4</option>
-  <option value="3.8">3.8</option>
-  <option value="3.5">3.5</option>
-  <option value="3">3</option>
-  <option value="2">2</option>
-  <option value="1">1</option>
+  <option value="0">0</option>
 </select>
 </div>
 
