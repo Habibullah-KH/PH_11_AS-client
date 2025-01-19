@@ -27,19 +27,22 @@ const MyTutorial = () => {
         <Loding/>
     }
     return (
-        <>
-            <div className="text-center bg-[#fdbc78] py-10 mb-10">
-               <h2 className="font-bold text-4xl text-[2.5xl] text-black">
-                   Your tutorials.
-               </h2>
-           </div>
-           {userData && userData.length > 0 ? (
-                userData
-                .map((data, i) => <CardMyTutorial key={i} data={data}></CardMyTutorial>)
-            ) : (
-                <NoDataFound />
-            )}
-        </>
+  <>
+      <div className="text-center bg-[#fdbc78] py-10 mb-10">
+         <h2 className="font-bold text-4xl text-[2.5xl] text-black">
+             Your tutorials.
+         </h2>
+     </div>
+
+     <div className="flex flex-wrap justify-center gap-2 items-center">
+     {userData && userData.length > 0 ? (
+          userData
+          .map((data, i) => <CardMyTutorial key={i} data={data}></CardMyTutorial>)
+      ) : (
+          <NoDataFound />
+      )}
+     </div>
+  </>
     );
 };
 

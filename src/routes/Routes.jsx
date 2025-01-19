@@ -12,6 +12,7 @@ import TutorDetails from '../pages/Tutorial-details/TutorDetails';
 import PrivetRoutes from './PrivetRoutes';
 import MyBookedTutor from '../pages/MyBookedTutor/MyBookedTutor';
 import MyTutorial from '../pages/MyTutorial';
+import UpdateMyTutorial from '../pages/UpdateMyTutorial';
 
 
   const Routes = createBrowserRouter([
@@ -54,6 +55,10 @@ import MyTutorial from '../pages/MyTutorial';
     {
      path: "/mytutorial/:email",
      element: <PrivetRoutes><MyTutorial/></PrivetRoutes>,
+    },
+    {
+     path: "/UpdateMyTutorial/:id",
+     element: <PrivetRoutes><UpdateMyTutorial/></PrivetRoutes>,
     },
 
   ]

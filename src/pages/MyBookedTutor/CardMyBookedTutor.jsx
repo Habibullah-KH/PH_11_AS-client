@@ -34,11 +34,11 @@ const CardMyBookedTutor = ({ data }) => {
   return (
     <div
       className="flex flex-wrap justify-between p-2
-        items-center bg-base-100 max-w-[40rem] 
+        items-center bg-base-100 max-w-[40rem] min-h-[150px]
         shadow-xl mx-auto border-2 m-3 rounded-xl"
     >
       <div className="flex items-center gap-3">
-        <img className="rounded-xl" src={image} alt="profile" />
+        <img className="rounded-xl w-32" src={image} alt="profile" />
         <div>
           <h2 className="card-title">{name}</h2>
           <p

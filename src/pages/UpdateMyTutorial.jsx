@@ -1,13 +1,15 @@
 import { useContext, useRef } from "react";
 import Swal from "sweetalert2";
-import AuthContext from "../context/AuthContext";
 import Loding from "../component/Loding";
+import AuthContext from "../context/AuthContext";
+import { TbMoodEdit } from "react-icons/tb";
+import { useParams } from "react-router-dom";
 
-const AddTutorial = () => {
+const UpdateMyTutorial = () => {
     const {user} = useContext(AuthContext);
     const languageRef = useRef(null);
-    const ratingRef = useRef(null);
-
+    const ratingRef = useRef(null)
+    const {id} = useParams()
 
     if(!user){
       return <Loding/>
@@ -21,14 +23,14 @@ const AddTutorial = () => {
     const image = form.get('image');
 
     const language = languageRef.current.value;
-    const rating = parseFloat(ratingRef.current.value);
 
     const description = form.get('description');
     const price = parseFloat(form.get('price')); 
-    
+
+    const rating = parseFloat(ratingRef.current.value);
     const urlRegex = /^https?:\/\/.*$/i;
 
-    const tutorialData = {email, name, image, description, price, language, rating};
+    const UpdatedData = {email, name, image, description, price, language, rating};
 
     if (!urlRegex.test(image)) {
         Swal.fire({
@@ -62,12 +64,12 @@ const AddTutorial = () => {
 
 const saveOnDatabase = async() => {
   try{
-    const res = await fetch(`${import.meta.env.VITE_SERVER_url}/addTutorial`, {
-      method: 'POST',
+    const res = await fetch(`${import.meta.env.VITE_SERVER_url}/UpdateMyTutorial/${id}`, {
+      method: 'PUT',
       headers: {
           'content-type': 'application/json'
       },
-      body: JSON.stringify(tutorialData)
+      body: JSON.stringify(UpdatedData)
       
   });
 
@@ -78,7 +80,7 @@ const saveOnDatabase = async() => {
 
      if(data){
       Swal.fire({
-        title: 'submit success',
+        title: 'Update success',
         text: 'Do you want to continue',
         icon: 'success',
         confirmButtonText: 'Close'
@@ -99,18 +101,13 @@ saveOnDatabase();
             
 
             <div className="text-center my-10">
-                <h2 className="font-bold text-4xl">Add your tutorial</h2>
+                <h2 className="font-bold text-4xl flex gap-2"><TbMoodEdit />
+                Update your tutorial</h2>
             </div>
 
 
             <div className="border-2 rounded-3xl bg-[#ffd36d] shadow-xl md:w-2/4 p-5">
 
-            <div className="text-center my-5 text-black">
-                <h2 className="font-bold text-2xl">Become a tutor</h2>
-                <p className="text-gray-600 text-sm">
-                    Earn money sharing your expert knowledge with students.<br/>
-                     Sign up to start tutoring online with Preply.</p>
-            </div>
 
 {/* Form start */}
             <form 
@@ -178,7 +175,6 @@ ref={languageRef}
         </div>
 
 
-
 {/* Rating */}
 <div className="form-control">
           <label className="label">
@@ -193,7 +189,6 @@ ref={ratingRef}
   <option value="0">0</option>
 </select>
 </div>
-
 
 {/* Price */}
 <div className="form-control">
@@ -227,4 +222,4 @@ ref={ratingRef}
     );
 };
 
-export default AddTutorial;
+export default UpdateMyTutorial;

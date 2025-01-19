@@ -1,11 +1,14 @@
 import PropTypes from "prop-types";
 import { FaHeart } from "react-icons/fa6";
+import { IoTrashBin } from "react-icons/io5";
+import { BiEdit } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const CardMyTutorial = ({ data }) => {
-    const {name, image, description, language, price, review} = data;
+    const {name, image, description, language, price, review, _id} = data;
 
   return (
-  <div className="card card-side bg-base-100 shadow-xl max-w-[620px] border-2 p-2 grid grid-cols-5">
+  <div className="card card-side bg-base-100 shadow-xl max-w-[600px] max-h-[700px] min-h-[225px] border-2 p-2 grid grid-cols-5">
   <figure className="col-span-1">
     <img
     className="rounded-xl"
@@ -46,6 +49,12 @@ const CardMyTutorial = ({ data }) => {
 
     <p>{description}</p>
   </div>
+
+ {/*updatae and delete butotn*/}
+ <div className=" col-span-5 flex gap-4 items-baseline justify-end p-2 text-xl">
+  <button className="text-red-600"><IoTrashBin /></button>
+  <Link to={`/UpdateMyTutorial/${_id}`}><button className="text-lime-600"><BiEdit /></button></Link>
+ </div>
 </div>
   );
 };
