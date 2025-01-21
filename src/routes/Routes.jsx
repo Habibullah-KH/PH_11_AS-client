@@ -13,9 +13,14 @@ import PrivetRoutes from './PrivetRoutes';
 import MyBookedTutor from '../pages/MyBookedTutor/MyBookedTutor';
 import MyTutorial from '../pages/MyTutorial';
 import UpdateMyTutorial from '../pages/UpdateMyTutorial';
+import NoDataFound from '../pages/NoDataFound';
 
 
   const Routes = createBrowserRouter([
+{
+    path: "*",
+    element: <NoDataFound />,
+},
 {
   path: "/",
   element: <MainLayout/>,

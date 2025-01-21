@@ -10,8 +10,7 @@ useEffect(()=>{
     const fetchData = async () => {
         try {
           const response = await fetch(
-            `${import.meta.env.VITE_SERVER_url}/find-tutors${
-              language || ""}`
+            `${import.meta.env.VITE_SERVER_url}/cards`
           );
           const data = await response.json();
           setCard(data);

@@ -23,7 +23,7 @@ const CardMyBookedTutor = ({ data }) => {
       }
 
       const data = await res.json();
-      console.log("Review updated:", data);
+      // console.log("Review updated:", data);
 
     } catch (err) {
       console.error("Error updating review:", err);

@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 const CardMyTutorial = ({ data }) => {
     const {name, image, description, language, price, review, _id} = data;
 const handleDelete = id =>{
-  console.log(id);
+  // console.log(id);
   Swal.fire({
     title: "Are you sure?",
     text: "You won't be able to revert this!",
@@ -34,10 +34,10 @@ const handleDelete = id =>{
             window.location.reload();
           })
           .catch((err) => console.error("Error deleting tutorial:", err));
-      console.log("delete confirm");
+      // console.log("delete confirm");
         }
       })
-      console.log('delete confirm');
+      // console.log('delete confirm');
     }
   });
 }
@@ -76,7 +76,7 @@ const handleDelete = id =>{
 
 {/* revew and price */}
 <div className="flex gap-4 text-xl">
-<p className="flex items-center"><FaHeart />{review}</p>
+<p className="flex gap-3 items-center"><FaHeart />{review}</p>
 <p>${price}</p>
 </div>
 </div>

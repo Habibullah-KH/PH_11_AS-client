@@ -11,7 +11,7 @@ const TutorDetilCart = ({ data }) => {
     const {user} = useContext(AuthContext)
 
     if (!data) {
-        console.log("Data is undefined");
+        // console.log("Data is undefined");
         return <Loding />;
     }
 
@@ -31,14 +31,14 @@ const TutorDetilCart = ({ data }) => {
 
 
  const handleBook = () => {
-    console.log(userData);
+    // console.log(userData);
 
     if(user?.email === email?.toLowerCase()){
-        console.log('helo');
+        // console.log('helo');
         return toast.error('Action not permitted')
     }
-console.log(user.email);
-console.log(email);
+// console.log(user.email);
+// console.log(email);
      //* send data to backend
      fetch(`${import.meta.env.VITE_SERVER_url}/bookData`, {
         method: 'POST',
@@ -118,7 +118,7 @@ console.log(email);
            
             {/* revew and price */}
             <div className="flex gap-4 text-xl">
-            <p className="flex gap-2 items-center"><FaHeart />{review}</p>
+            <p className="flex gap-3 items-center"><FaHeart />{review}</p>
             <p>${price}</p>
             </div>
 

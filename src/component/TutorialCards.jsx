@@ -7,7 +7,7 @@ const TutorialCards = ({data}) => {
     const {name, image, description, language, price, review, _id} = data;
     const naviget = useNavigate();
     const handleDetails = (e) => {
-      console.log(e);
+      // console.log(e);
       naviget(`/tutor/${e}`)
     }
 
@@ -49,7 +49,7 @@ const TutorialCards = ({data}) => {
 
 {/* revew and price */}
 <div className="flex gap-4 text-xl">
-<p className="flex items-center"><FaHeart />{review}</p>
+<p className="flex gap-3 items-center"><FaHeart />{review}</p>
 <p>${price}</p>
 </div>
 </div>

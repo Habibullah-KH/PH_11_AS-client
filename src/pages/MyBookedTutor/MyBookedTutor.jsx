@@ -11,7 +11,6 @@ const MyBookedTutor = () => {
         const fetchData = async() => {
             try{
                 const res = await fetch(`${import.meta.env.VITE_SERVER_url}/myBookedData/${user.email}`);
-                console.log(user.email)
                 const data = await res.json();
                 setLoding(false)
                 setUserData(data);

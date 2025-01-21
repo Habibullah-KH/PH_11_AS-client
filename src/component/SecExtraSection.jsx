@@ -1,4 +1,5 @@
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const SecExtraSection = () => {
     return (
@@ -36,7 +37,9 @@ const SecExtraSection = () => {
         <li>Get paid securely</li>
        </ul>
        
+       <Link to={'/addTutorials'}>
            <button className="btn btn-active btn-ghost hover:btn-outline flex items-center gap-2 text-black">Become a tutor <FaArrowRightLong /> </button>
+       </Link>
        </div>
            </div>
 

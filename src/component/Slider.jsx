@@ -1,4 +1,5 @@
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Slider = () => {
     return (
@@ -15,7 +16,9 @@ with your best<br/>
 language tutor.<br/>
 </h2>
 
-            <button className="btn btn-active btn-ghost hover:btn-outline flex items-center gap-2 text-black">Get Started <FaArrowRightLong /> </button>
+           <Link to={'/find-tutors'}>
+           <button className="btn btn-active btn-ghost hover:btn-outline flex items-center gap-2 text-black">Get Started <FaArrowRightLong /> </button>
+           </Link> 
         </div>
         {/* image-container */}
         <div>
@@ -43,7 +46,8 @@ Find the right tutor<br/>
 for you.
 </h2>
 
-            <button className="btn btn-active btn-ghost hover:btn-outline flex items-center gap-2 text-black">Get Started <FaArrowRightLong /> </button>
+<Link to={'/find-tutors'}>
+            <button className="btn btn-active btn-ghost hover:btn-outline flex items-center gap-2 text-black">Get Started <FaArrowRightLong /> </button></Link>
         </div>
     </div>
     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -64,7 +68,8 @@ for you.
      see difference.
 </h2>
 
-            <button className="btn btn-active btn-ghost hover:btn-outline flex items-center gap-2 text-black">Get Started <FaArrowRightLong /> </button>
+<Link to={'/find-tutors'}>
+            <button className="btn btn-active btn-ghost hover:btn-outline flex items-center gap-2 text-black">Get Started <FaArrowRightLong /> </button></Link>
         </div>
         {/* image-container */}
         <div>

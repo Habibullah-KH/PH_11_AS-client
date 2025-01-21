@@ -13,7 +13,7 @@ const fetchData = async() =>{
            const res = await fetch(`${import.meta.env.VITE_SERVER_url}/tutor/${details}`);
            const data = await res.json();
            setCart(data);
-           console.log(data);
+        //    console.log(data);
           }
           catch (err) {
             console.error("Error fetching data from tutor route:", err);

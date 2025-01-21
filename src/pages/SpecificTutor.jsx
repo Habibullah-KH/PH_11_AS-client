@@ -18,7 +18,7 @@ useEffect(()=>{
           );
           const data = await response.json();
           setCard(data);
-          console.log(card);
+        //   console.log(card);
 
         } catch (err) {
             console.error("Error fetching data:", err);

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import axios from 'axios';
 import AuthContext from "./AuthContext";
 import {createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import auth from "../Firebase/Firebase.Config";
@@ -43,14 +44,44 @@ const AuthProvider = ({children}) => {
     }
 
     //* obsurver
-    useEffect(()=>{
-        const unsubscribe = onAuthStateChanged(auth, (currentUser)=>{
-            setUser(currentUser)
-            setLoding(false)
-            setSuccess(true)
-        })
-        return()=>{unsubscribe()}
-    }, [])
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+          setUser(currentUser);
+          setLoding(false);
+          setSuccess(true);
+      
+          if (currentUser?.email) {
+            const user = { email: currentUser.email };
+      
+            axios.post(`${import.meta.env.VITE_SERVER_url}/jwt`, user, {
+              withCredentials:true
+            })
+              .then(res => {
+                console.log('JWT login response:', res.data);
+              })
+              .catch(err => {
+                console.error('Error in axios post:', err);
+              });
+              setLoding(false);
+
+          }
+
+          else{
+            axios.post(`${import.meta.env.VITE_SERVER_url}/logout`, {}, {
+              withCredentials: true
+            })
+            .then(res => {
+              console.log('logout',res.data)
+              setLoding(false);
+            })
+          }
+        });
+      
+        return () => {
+          unsubscribe();
+        };
+      }, []);
+      
 
     const authInfo = {
     user,
