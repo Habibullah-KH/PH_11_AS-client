@@ -42,7 +42,7 @@ import NoDataFound from '../pages/NoDataFound';
      element: <PrivetRoutes><AddTutorial/></PrivetRoutes>   
     },
     {
-     path: "/find-tutors",
+     path: "/cards",
      element: <FindTutors/>,
     },
     {

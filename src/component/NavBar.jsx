@@ -53,7 +53,7 @@ className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
     <button type="button">Add Tutorials</button>
 </NavLink>
 
-<NavLink  to={'/find-tutors'}
+<NavLink  to={'/cards'}
 className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
     <button type="button">Find tutors</button>
 </NavLink>
@@ -165,7 +165,7 @@ className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
     <button className="w-[8rem]" type="button">Add Tutorials</button>
 </NavLink>
 
-<NavLink  to={'/find-tutors'}
+<NavLink  to={'/cards'}
 className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
     <button className="w-[8rem]" type="button">Find tutors</button>
 </NavLink>
