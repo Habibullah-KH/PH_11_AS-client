@@ -143,7 +143,7 @@ className={({isActive}) => isActive?"btn btn-outline" : "btn"}>
     left-0 right-0 shadow-sm z-10 overflow-hidden text-center mx-auto items-center
     flex flex-col flex-wrap md:flex-row justify-center gap-2 md:p-10 z-999
     `} >
-        <div className=" bg-white p-2 rounded-xl">
+        <div className={`bg-white p-2 rounded-xl ${user&&user.email?'block':'hidden'}`}>
          <div>
              <h4 className="font-bold">Account info:</h4>
          </div>
