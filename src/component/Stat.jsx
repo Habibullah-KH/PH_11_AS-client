@@ -1,7 +1,53 @@
 import { IoStarSharp } from "react-icons/io5";
 import { FaChalkboardTeacher } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 const Stat = () => {
+  const [userCount, setUserCount] = useState(0);
+  const [bookUserCount, setBookUserCount] = useState(0);
+  const [totalUser, setTotalUser] = useState(0)
+  const [reviewCount, setReviewCount] = useState(0);
+  const [languageCount, setLanguageCount] = useState(0);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${import.meta.env.VITE_SERVER_url}/countUsers`);
+        const data = await response.json();
+
+        const Bookdataresponse = await fetch(`${import.meta.env.VITE_SERVER_url}/allMyBookedData`);
+        const Bookeddata = await Bookdataresponse.json();
+
+        //*get user email
+       const uniqueEmail = [...new Set(data.map(user => user.email))]
+       const emailCount = uniqueEmail.length;
+       setUserCount(emailCount);
+
+        //*get bookdata user email
+       const BookuniqueEmail = [...new Set(Bookeddata.map(user => user.email))]
+       const BookemailCount = BookuniqueEmail.length;
+       setBookUserCount(BookemailCount);
+
+       //!!! total user
+       setTotalUser(bookUserCount + userCount);
+
+       //*get user review
+       const userReview = data.reduce((acc, rev)=>acc+(rev.review||0), 0);
+       setReviewCount(userReview);
+
+       //*get language
+       const allLanguage = [...new Set(data.map(lang => lang.language))];
+       const allLangCount = allLanguage.length;
+       setLanguageCount(allLangCount);
+
+      } catch (err) {
+        console.error('Error fetching user count:', err);
+      }
+    };
+    fetchData();
+  }, [userCount]);
+
+  // userCount?.map(data => console.log(data.email))
+
     return (
         <>
          <div className="stats shadow">
@@ -10,7 +56,7 @@ const Stat = () => {
     <FaChalkboardTeacher />
     </div>
     <div className="stat-title">All our tutors</div>
-    <div className="stat-value">31K</div>
+    <div className="stat-value">{userCount}</div>
   </div>
 
   <div className="stat">
@@ -18,7 +64,7 @@ const Stat = () => {
       <IoStarSharp />
     </div>
     <div className="stat-title">learner reviews</div>
-    <div className="stat-value">31K</div>
+    <div className="stat-value">{reviewCount}</div>
   </div>
 
   <div className="stat">
@@ -36,7 +82,7 @@ const Stat = () => {
       </svg>
     </div>
     <div className="stat-title">All languages</div>
-    <div className="stat-value">4,200</div>
+    <div className="stat-value">{languageCount}</div>
   </div>
 
   <div className="stat">
@@ -54,7 +100,7 @@ const Stat = () => {
       </svg>
     </div>
     <div className="stat-title">All users</div>
-    <div className="stat-value">1,200</div>
+    <div className="stat-value">{totalUser}</div>
   </div>
 </div>   
         </>

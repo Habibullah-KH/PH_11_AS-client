@@ -17,11 +17,10 @@ useEffect(()=>{
           console.error("Error fetching data:", err);
         }
       };
-  
+      
       fetchData();
     }, [search, ]);
 
-console.log(search);
   
     return (
         <>  
