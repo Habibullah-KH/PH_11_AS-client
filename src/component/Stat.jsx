@@ -8,6 +8,7 @@ const Stat = () => {
   const [totalUser, setTotalUser] = useState(0)
   const [reviewCount, setReviewCount] = useState(0);
   const [languageCount, setLanguageCount] = useState(0);
+  const [language, setLanguage] = useState();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -34,8 +35,11 @@ const Stat = () => {
        const userReview = data.reduce((acc, rev)=>acc+(rev.review||0), 0);
        setReviewCount(userReview);
 
+fetch('/LanguageInfo.json')
+.then(res=>res.json())
+.then(data=>setLanguage(data))
        //*get language
-       const allLanguage = [...new Set(data.map(lang => lang.language))];
+       const allLanguage = language.map(lang => lang.language);
        const allLangCount = allLanguage.length;
        setLanguageCount(allLangCount);
 
@@ -44,7 +48,7 @@ const Stat = () => {
       }
     };
     fetchData();
-  }, [userCount]);
+  }, [bookUserCount, language, userCount]);
 
   // userCount?.map(data => console.log(data.email))
 
