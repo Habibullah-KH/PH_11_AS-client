@@ -16,7 +16,7 @@ with your best<br/>
 language tutor.<br/>
 </h2>
 
-           <Link to={'/find-tutors'}>
+           <Link to={'/cards'}>
            <button className="btn btn-active btn-ghost hover:btn-outline flex items-center gap-2 text-black">Get Started <FaArrowRightLong /> </button>
            </Link> 
         </div>
@@ -46,7 +46,7 @@ Find the right tutor<br/>
 for you.
 </h2>
 
-<Link to={'/find-tutors'}>
+<Link to={'/cards'}>
             <button className="btn btn-active btn-ghost hover:btn-outline flex items-center gap-2 text-black">Get Started <FaArrowRightLong /> </button></Link>
         </div>
     </div>
@@ -68,7 +68,7 @@ for you.
      see difference.
 </h2>
 
-<Link to={'/find-tutors'}>
+<Link to={'/cards'}>
             <button className="btn btn-active btn-ghost hover:btn-outline flex items-center gap-2 text-black">Get Started <FaArrowRightLong /> </button></Link>
         </div>
         {/* image-container */}
