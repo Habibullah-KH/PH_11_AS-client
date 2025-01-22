@@ -11,10 +11,12 @@ const MyTutorial = () => {
     const [userData, setUserData]=useState(null);
     const axiosSecure = useAxiosSecure();
     useEffect(()=>{
-        const fetchData = async() => {
+        // const fetchData = async() => {
             try{
                 // const res = await fetch(`${import.meta.env.VITE_SERVER_url}/mytutorial/${user.email}`);
                 // const data = await res.json();
+                // setUserData(data)
+
                 // axios.get(`${import.meta.env.VITE_SERVER_url}/mytutorial/${user.email}`,{
                 //     withCredentials: true
                 // })
@@ -22,7 +24,6 @@ const MyTutorial = () => {
 
                 axiosSecure.get(`/mytutorial/${user.email}`)
                 .then(res=>setUserData(res.data))
-
                 setLoding(false)
                 // setUserData(data);
 
@@ -30,9 +31,9 @@ const MyTutorial = () => {
             catch(err){
                 console.error("Error fetching data from MyBookedTutor:", err);
             }
-        }
-        fetchData();
-    },[user.email])
+        // }
+        // fetchData();
+    },[])
     
     if(loding){
         <Loding/>
