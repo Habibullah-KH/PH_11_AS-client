@@ -1,11 +1,11 @@
 # 🎓PolyLingua 
 
-### **Description:** 
+### **✅ Description:** 
 ### The PolyLingua Platform is designed to connect users with skilled tutors across various languages and subjects. The platform simplifies finding, reviewing, and booking tutors through a user-friendly interface. It promotes global learning by offering accessible and secure ways to book tutors.
 
 ### To provide an efficient and interactive solution for hiring tutors, enabling users to enhance their skills in a friendly and accessible environment.
 
-### **User Benefits:**
+### **✅ User Benefits:**
 * Effortlessly find tutors for various languages and subjects.
 * Personalized tutor profiles for informed decision-making.
 * Secure booking process and easy management of sessions.
@@ -13,7 +13,7 @@
 * Interactive interface with light/dark theme options for better usability.
 * This platform provides a reliable and engaging way to learn and grow!
 
-### **Key Features:**
+### **✅ Key Features:**
 * Browse tutors by language categories.
 * View detailed tutor profiles, including pricing, reviews, and expertise.
 * Add and manage tutorials with ease.
@@ -21,7 +21,7 @@
 * Review tutors to help others make informed choices.
 * Fully responsive design with a seamless mobile, tablet, and desktop experience.
 
-### ***NPM packages used in this project:***
+### ***🔸 NPM packages used in this project:***
 * @eslint/js@9.17.0
 * @types/react-dom@18.3.5
 * @types/react@18.3.18
