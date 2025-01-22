@@ -13,7 +13,7 @@
 * Interactive interface with light/dark theme options for better usability.
 * This platform provides a reliable and engaging way to learn and grow!
 
-### ***Key Features:**
+### **Key Features:**
 * Browse tutors by language categories.
 * View detailed tutor profiles, including pricing, reviews, and expertise.
 * Add and manage tutorials with ease.
