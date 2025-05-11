@@ -10,7 +10,7 @@ const axiosInstance = axios.create({
     headers: {'X-Custom-Header': 'foobar'}
   });
 
-const useAxiosSecure = () => {
+const  useAxiosSecure = () => {
     const {logOut} = useAuth();
     const navigate = useNavigate();
 
