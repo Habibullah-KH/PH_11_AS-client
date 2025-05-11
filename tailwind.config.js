@@ -1,4 +1,4 @@
-import daisyui from 'daisyui';
+import daisyui from 'daisyui'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -7,10 +7,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily:{
+    fontFamily: {
       Lexend: ['Lexend', 'serif'],
     },
-
     extend: {
       colors: {
         'clr-primary': '#2ECC71',
@@ -19,6 +18,16 @@ export default {
         'clr-bg': '#ffffff',
         'clr-text-100': '#6d597a',
         'clr-text-200': '#050315',
+      },
+      animation: {
+        gradient: 'gradientMove 4s ease infinite',
+      },
+      keyframes: {
+        gradientMove: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
       },
     },
   },
@@ -39,4 +48,4 @@ export default {
       },
     ],
   },
-};
+}

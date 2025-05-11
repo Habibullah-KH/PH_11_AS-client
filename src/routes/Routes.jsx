@@ -4,7 +4,6 @@ import {
   } from "react-router-dom";
 import Home from '../pages/Home';
 import Login from '../pages/Login';
-import SignIn from '../pages/SignIn';
 import AddTutorial from '../pages/AddTutorial';
 import FindTutors from '../pages/FindTutors';
 import SpecificTutor from '../pages/SpecificTutor';
@@ -14,6 +13,7 @@ import MyBookedTutor from '../pages/MyBookedTutor/MyBookedTutor';
 import MyTutorial from '../pages/MyTutorial';
 import UpdateMyTutorial from '../pages/UpdateMyTutorial';
 import NoDataFound from '../pages/NoDataFound';
+import Signup from '../pages/Signup';
 
 
   const Routes = createBrowserRouter([
@@ -21,6 +21,7 @@ import NoDataFound from '../pages/NoDataFound';
     path: "*",
     element: <NoDataFound />,
 },
+
 {
   path: "/",
   element: <MainLayout/>,
@@ -28,14 +29,6 @@ import NoDataFound from '../pages/NoDataFound';
     {
      path: "/",
      element: <Home/>  
-    },
-    {
-     path: "/login",
-     element: <Login/>  
-    },
-    {
-     path: "/signin",
-     element: <SignIn/>  
     },
     {
      path: "/addTutorials",
@@ -67,6 +60,14 @@ import NoDataFound from '../pages/NoDataFound';
     },
 
   ]
+},
+{
+   path: "/login",
+   element: <Login/>  
+},
+{
+ path: "/signup",
+ element: <Signup/>  
 },
   ]);
 

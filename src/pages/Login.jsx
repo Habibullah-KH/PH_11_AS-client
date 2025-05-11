@@ -58,7 +58,7 @@ const naviget = useNavigate();
     
           if (userData) {
             Swal.fire({
-              title: "Signin success",
+              title: "Signup success",
               text: "You have successfully signed in with Google",
               icon: "success",
               confirmButtonText: "Close",
@@ -138,7 +138,7 @@ const naviget = useNavigate();
           </label>
 
           <p>Don&apos;t have an account! 
-            <NavLink to="/signin" className="list mx-2">Signin now</NavLink>
+            <NavLink to="/signup" className="list mx-2">Signup now</NavLink>
           </p>
         </div>
 {/* input end */}

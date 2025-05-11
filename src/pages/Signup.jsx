@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { AiTwotoneEye, AiTwotoneEyeInvisible } from "react-icons/ai";
 import AuthContext from "../context/AuthContext";
 
-const SignIn = () => {
+const Signup = () => {
    const [showHide, setShowHide]=useState(false);
    const naviget = useNavigate();
 
@@ -45,7 +45,7 @@ const SignIn = () => {
          .then((userData)=>{
            if(userData.user){
              Swal.fire({
-               title: 'Signin success',
+               title: 'Signup success',
                text: 'Do you want to continue',
                icon: 'success',
                confirmButtonText: 'Close'
@@ -77,7 +77,7 @@ const SignIn = () => {
     
           if (userData) {
             Swal.fire({
-              title: "Signin success",
+              title: "Signup success",
               text: "You have successfully signed in with Google",
               icon: "success",
               confirmButtonText: "Close",
@@ -209,4 +209,4 @@ const SignIn = () => {
      );
  };
 
-export default SignIn;
+export default Signup;

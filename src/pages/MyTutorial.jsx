@@ -22,7 +22,7 @@ const MyTutorial = () => {
                 // })
                 // .then(res=>setUserData(res.data))
 
-                axiosSecure.get(`/mytutorial/${user.email}`)
+                axiosSecure.get(`${import.meta.env.VITE_SERVER_url}/mytutorial/${user.email}`)
                 .then(res=>setUserData(res.data))
                 setLoding(false)
                 // setUserData(data);
