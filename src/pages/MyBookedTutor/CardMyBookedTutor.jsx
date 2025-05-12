@@ -25,7 +25,7 @@ const CardMyBookedTutor = ({ data }) => {
         throw new Error(errorData.message || "Failed to update review");
       }
 
-      const result = await res.json();
+      await res.json();
       toast.success("Review submitted successfully!");
     } catch (err) {
       toast.error(
