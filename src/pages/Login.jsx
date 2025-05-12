@@ -51,34 +51,37 @@ const naviget = useNavigate();
    };
 
      //*  create data by google account
-     const continueGoogle = () => {
-      createUserByGoogl()
-        .then((result) => {
-          const userData = result.user;
-    
-          if (userData) {
-            Swal.fire({
-              title: "Signup success",
-              text: "You have successfully signed in with Google",
-              icon: "success",
-              confirmButtonText: "Close",
-            }).then(() => {
-              
-              setUser(userData);
-              naviget(location?.state?.from?.pathname || "/");
-            });
-          }
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          Swal.fire({
-            title: "Error",
-            text: `Failed to sign in: ${errorCode}`,
-            icon: "error",
-            confirmButtonText: "Close",
-          });
+const continueGoogle = () => {
+  console.log("Google login attempt started");
+  
+  createUserByGoogl()
+    .then((result) => {
+      console.log("Google login success:", result);
+      const userData = result.user;
+
+      if (userData) {
+        Swal.fire({
+          title: "Signup success",
+          text: "You have successfully signed in with Google",
+          icon: "success",
+          confirmButtonText: "Close",
+        }).then(() => {
+          setUser(userData);
+          naviget(location?.state?.from?.pathname || "/");
         });
-    };
+      }
+    })
+    .catch((error) => {
+      console.error("Google login error:", error);
+      const errorCode = error.code;
+      Swal.fire({
+        title: "Error",
+        text: `Failed to sign in: ${errorCode}`,
+        icon: "error",
+        confirmButtonText: "Close",
+      });
+    });
+};
     
     
 
