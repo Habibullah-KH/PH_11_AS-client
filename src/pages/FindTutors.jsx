@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import TutorialCards from "../component/TutorialCards";
 import Loding from "../component/Loding";
+import TextBanner from "../component/TextBanner";
 
 const FindTutors = () => {
     const [card, setCard]=useState();
@@ -24,13 +25,11 @@ useEffect(()=>{
   
     return (
         <>  
-<div className="text-center bg-[#ffd36d] py-28 mb-10">
-        <h2 className="font-bold text-4xl text-[2.5xl] text-black">
-        Online tutors & teachers for private lessons
-        </h2>
-        <p className="text-black">
-        Learn faster with your best language tutor.
-        </p>
+<div className="text-center mb-10">
+<TextBanner 
+textPrime={'Online tutors & teachers for private lessons'}
+textSec={'Learn faster with your best language tutor.'}
+/>
 </div>
 
 <div className="flex items-center gap-4 pl-2 pb-10 border-b-2 border-dashed">

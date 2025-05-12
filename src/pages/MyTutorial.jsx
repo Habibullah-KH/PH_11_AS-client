@@ -5,6 +5,7 @@ import AuthContext from "../context/AuthContext";
 import CardMyTutorial from "./CardMyTutorial";
 // import axios from "axios";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
+import TextBanner from "../component/TextBanner";
 
 const MyTutorial = () => {
     const {user, loding, setLoding} = useContext(AuthContext);
@@ -40,13 +41,11 @@ const MyTutorial = () => {
     }
     return (
   <>
-      <div className="text-center bg-[#fdbc78] py-10 mb-10">
-         <h2 className="font-bold text-4xl text-[2.5xl] text-black">
-             Your tutorials.
-         </h2>
+      <div className="text-center">
+         <TextBanner textPrime="Your tutorials."/>
      </div>
 
-     <div className="flex flex-wrap justify-center gap-2 items-center mb-10">
+     <div className="flex flex-wrap justify-center gap-2 items-center my-20">
      {userData && userData.length > 0 ? (
           userData
           .map((data, i) => <CardMyTutorial key={i} data={data}></CardMyTutorial>)

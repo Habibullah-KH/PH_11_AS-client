@@ -84,16 +84,16 @@ const naviget = useNavigate();
 
     return (
         <>
-  <div className="hero min-h-screen ">
+  <div className="hero min-h-screen bg-[url('/authBG.jpg')]">
   <div className="
-  relative hero-content flex-col lg:flex-row border-2 rounded-3xl shadow-xl  bg-[#ffd36d]">
+  relative hero-content flex-col lg:flex-row border-2 rounded-3xl shadow-xl  backdrop-blur-xl">
 
 <div
- className="absolute inset-0 bg-[url('/TPdoodle.png')] bg-center opacity-40 w-full pointer-events-none rounded-2xl"
+ className="absolute inset-0 bg-center opacity-40 w-full pointer-events-none rounded-2xl"
  aria-hidden="true"
 ></div>
 
-    <div className="text-center lg:text-left  backdrop-blur-sm shadow-2xl rounded-2xl p-5 text-black">
+    <div className="text-center lg:text-left  backdrop-blur-3xl rounded-2xl shadow-xl p-5 text-black">
       <h1 className="text-2xl md:text-5xl font-bold w-full ">Log in now!</h1>
     </div>
     <div className="card bg-base-100 w-full max-w-sm shrink-0 border-2 ">

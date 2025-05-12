@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
 
-
 const Card = ({data}) => {
     const {languageName, cardImage} = data;
 
@@ -33,7 +32,7 @@ const handleCardClick = () => {
         
 <div
 onClick={handleCardClick}
- className="flex items-center gap-5 p-7 border w-fit rounded-xl">
+ className="flex items-center gap-5 p-7 border shadow-md w-[293px] rounded-xl hover:border-transparent hover:shadow-transparent duration-500">
 
 <div className="text-2xl border-2 p-2 rounded-xl">
 <img className="w-5 h-5 rounded-full" src={cardImage}/>    

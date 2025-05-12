@@ -83,33 +83,44 @@ const TutorDetilCart = ({ data }) => {
    </div>
 
    <div className="card card-compact bg-base-100 max-w-96 shadow-xl mx-auto my-20 border-2">
-       <div className='flex justify-around gap-20 pt-7'>
-           <img
-           className='rounded-xl'
-               src={image}
-               alt='tutorial'
+       <div className='flex items-start gap-20'>
+        <img className='rounded-full w-10 h-10 my-5 mx-3' 
+        src={image || '/profile.png'}
+    onError={(e) => {
+    e.target.onerror = null;
+    e.target.src = '/profile.png';
+  }}
            />
        </div>
        <div className="card-body">
 
            <div>
                <div>
-                <p 
-                   className={`
-                   badge badge-secondary text-black
-                   ${language === 'English'? 'bg-[#fe938c]' : ''}
-                   ${language === 'Spanish'? 'bg-yellow-400' : ''}
-                   ${language === 'Japanese'? 'bg-orange-400' : ''}
-                   ${language === 'French'? 'bg-[#e4c1f9]' : ''}
-                   ${language === 'Chinese'? 'bg-[#fec5bb]' : ''}
-                   ${language === 'German'? 'bg-[#a9def9]' : ''}
-                   ${language === 'Italian'? 'bg-[#fec89a]' : ''}
-                   ${language === 'Arabic'? 'bg-[#99d98c]' : ''}
-                   ${language === 'Portuguese'? 'bg-[#f49cbb]' : ''}
-                   `}>
-               
-                   {language}
-               </p>
+              <p
+              className={`font-semibold text-xs mt-1 ${
+                language === "Spanish"
+                  ? "text-yellow-300 dark:text-yellow-600"
+                  : language === "English"
+                  ? "text-rose-300 dark:text-rose-600"
+                  : language === "Japanese"
+                  ? "text-orange-300 dark:text-orange-600"
+                  : language === "French"
+                  ? "text-purple-300 dark:text-purple-600"
+                  : language === "Chinese"
+                  ? "text-pink-300 dark:text-pink-600"
+                  : language === "German"
+                  ? "text-blue-300 dark:text-blue-600"
+                  : language === "Italian"
+                  ? "text-amber-300 dark:text-amber-600"
+                  : language === "Arabic"
+                  ? "text-green-300 dark:text-green-600"
+                  : language === "Portuguese"
+                  ? "text-fuchsia-300 dark:text-fuchsia-600"
+                  : "text-gray-400 dark:text-gray-300"
+              }`}
+            >
+              {language}
+            </p>
                </div>   
            </div>
 

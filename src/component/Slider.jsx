@@ -1,6 +1,8 @@
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import './buttons/button.css';
+import './buttons/circel.css';
+import ColorsButton from "./buttons/ColorsButton";
 
 
 const Slider = () => {
@@ -25,8 +27,8 @@ const Slider = () => {
   </div>
 
     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between ">
-      <a href="#slide3" className="btn btn-circle bg-transparent">❮</a>
-      <a href="#slide2" className="btn btn-circle bg-transparent">❯</a>
+      <a href="#slide3" className="circel"><ColorsButton text="❮"></ColorsButton></a>
+      <a href="#slide2" className="circel"><ColorsButton text="❯"></ColorsButton></a>
     </div>
   </div>
   {/* slider 1 end */}
@@ -45,8 +47,8 @@ for you.
         </div>
     </div>
     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide1" className="btn btn-circle bg-transparent">❮</a>
-      <a href="#slide3" className="btn btn-circle bg-transparent">❯</a>
+      <a href="#slide1" className="circel"><ColorsButton text="❮"></ColorsButton></a>
+      <a href="#slide3" className="circel"><ColorsButton text="❯"></ColorsButton></a>
     </div>
   </div>
     {/* slider 2 end */}
@@ -68,8 +70,8 @@ for you.
 
     </div>
     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-      <a href="#slide2" className="btn btn-circle bg-transparent">❮</a>
-      <a href="#slide1" className="btn btn-circle bg-transparent">❯</a>
+      <a href="#slide2" className="circel"><ColorsButton text="❮"></ColorsButton></a>
+      <a href="#slide1" className="circel"><ColorsButton text="❯"></ColorsButton></a>
     </div>
   </div>
     {/* slider 3 end */}

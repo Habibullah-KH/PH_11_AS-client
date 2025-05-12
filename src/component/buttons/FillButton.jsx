@@ -7,7 +7,7 @@ const FillButton = ({ text, onClick, className = '', theme }) => {
       onClick={onClick}
       className={`w-full md:w-fit px-4 py-2 text-xs md:text-md ${className}
         ${theme === 'dark' ? 'text-white' : 'text-black'} 
-         hover:bg-[#ffdb66bd] font-semibold rounded 
+         hover:bg-[#f4b400] font-semibold rounded 
         transition duration-300`}
     >
       {text}

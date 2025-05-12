@@ -95,15 +95,15 @@ saveOnDatabase();
 
     return (
         <>
-        <div className="grid justify-items-center my-10">
+        <div className="flex items-center flex-col hero min-h-screen bg-[url('/addTutorBG.jpg')] bg-opacity-30">
             
 
-            <div className="text-center my-10">
-                <h2 className="font-bold text-4xl">Add your tutorial</h2>
+            <div className="z-40">
+                <h2 className="font-bold text-4xl p-10">Add your tutorial</h2>
             </div>
 
 
-            <div className="border-2 rounded-3xl bg-[#ffd36d] shadow-xl md:w-2/4 p-5">
+            <div className="border-2 rounded-3xl bg-[#ffd36d] bg-opacity-20 shadow-xl md:w-2/4 p-5">
 
             <div className="text-center my-5 text-black">
                 <h2 className="font-bold text-2xl">Become a tutor</h2>
@@ -116,7 +116,7 @@ saveOnDatabase();
             <form 
             onSubmit={handleSubmit}
             className="
-            card-body backdrop-blur-xl rounded-2xl 
+            card-body backdrop-blur-2xl rounded-2xl 
             lg:grid lg:grid-cols-2 md:w-full
             ">
 

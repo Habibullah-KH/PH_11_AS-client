@@ -102,15 +102,15 @@ const Signup = () => {
  
      return (
          <>
- <div className="hero min-h-screen">
+ <div className="hero min-h-screen bg-[url('/authBG.jpg')]">
 
    <div 
    className="
-   relative hero-content flex-col lg:flex-row-reverse bg-[#ffd36d]
+   relative hero-content flex-col lg:flex-row-reverse 
    border-2 rounded-3xl shadow-xl ">
 
    <div
- className="absolute inset-0 bg-[url('/TPdoodle.png')] bg-center opacity-35 w-full pointer-events-none rounded-2xl"
+ className="absolute inset-0 bg-center w-full pointer-events-none rounded-2xl backdrop-blur-3xl shadow-xl"
  aria-hidden="true"
 ></div>
 

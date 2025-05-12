@@ -3,6 +3,7 @@ import AuthContext from "../../context/AuthContext";
 import CardMyBookedTutor from "./CardMyBookedTutor";
 import NoDataFound from "../NoDataFound";
 import Loding from "../../component/Loding";
+import TextBanner from "../../component/TextBanner";
 
 const MyBookedTutor = () => {
     const {user, loding, setLoding} = useContext(AuthContext);
@@ -28,17 +29,17 @@ const MyBookedTutor = () => {
     }
     return (
         <>
-            <div className="text-center bg-[#ffd36d] py-10 mb-10">
-               <h2 className="font-bold text-4xl text-[2.5xl] text-black">
-                   Your booked tutorial.
-               </h2>
+            <div className="text-center">
+               <TextBanner textPrime="Your booked tutorial."/>
            </div>
+           <div className="flex flex-wrap gap-4 justify-center my-10"> 
            {userData && userData.length > 0 ? (
                 userData
                 .map((data, i) => <CardMyBookedTutor key={i} data={data} />)
             ) : (
                 <NoDataFound />
             )}
+            </div>
         </>
     );
 };
