@@ -21,6 +21,24 @@
 * Review tutors to help others make informed choices.
 * Fully responsive design with a seamless mobile, tablet, and desktop experience.
 
+# 🚀 Project Setup Guide
+
+## 🖥 Client Setup (Vite + React)
+
+### 1. Go to the Client Directory
+
+* cd PH_11_AS-client
+
+### 2. Install Dependencies
+
+* npm install
+
+### 3. Start the Development Server
+
+* npm run dev
+
+### App runs at: http://localhost:5173
+
 ### ***🔸 NPM packages used in this project:***
 * @eslint/js@9.17.0
 * @types/react-dom@18.3.5
