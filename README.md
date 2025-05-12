@@ -25,6 +25,8 @@
 
 ## 🖥 Client Setup (Vite + React)
 
+## Clone the project from github 'Code > HTTPS > Clone using the web URL.'
+
 ### 1. Go to the Client Directory
 
 * cd PH_11_AS-client
