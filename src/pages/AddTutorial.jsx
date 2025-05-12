@@ -103,7 +103,7 @@ saveOnDatabase();
             </div>
 
 
-            <div className="border-2 rounded-3xl bg-[#ffd36d] bg-opacity-20 shadow-xl md:w-2/4 p-5">
+            <div className="border-2 rounded-3xl bg-[#ffd36d] bg-opacity-20 shadow-xl md:w-2/4 p-5 mb-20">
 
             <div className="text-center my-5 text-black">
                 <h2 className="font-bold text-2xl">Become a tutor</h2>
