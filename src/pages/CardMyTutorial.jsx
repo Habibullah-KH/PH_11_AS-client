@@ -122,6 +122,11 @@ CardMyTutorial.propTypes = {
     review: PropTypes.number.isRequired,
     _id: PropTypes.string.isRequired,
   }).isRequired,
+  deleteCount: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.func,
+  ]),
 };
+
 
 export default CardMyTutorial;
