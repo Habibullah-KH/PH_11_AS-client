@@ -200,7 +200,13 @@ const Signup = () => {
          <div className="form-control mt-6">
            <button onClick={continueGoogle} className="btn border-2 hover:border-red-400 shadow-xl"> <FcGoogle/> Sign in with google</button>
          </div>
- 
+  <div className="form-control mt-4">
+<NavLink
+to="/"
+className="hover:text-red-500 text-sm duration-700">
+Go Back to Home
+</NavLink>
+</div>
        </form>
      </div>
    </div>

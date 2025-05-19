@@ -16,7 +16,10 @@ const NavBar = () => {
     );
 
     const { user, logOut } = useContext(AuthContext);
-
+    const handleNavClick = () => {
+  setClick(false);
+  setVisit(false); 
+};
     useEffect(() => {
         localStorage.setItem("theme", theme);
         document.querySelector("html").setAttribute("data-theme", theme);
@@ -33,7 +36,9 @@ const NavBar = () => {
 
     return (
         <>
-            <div className="flex justify-between items-center p-4 backdrop-blur-3xl  w-full">
+            <div className={`flex justify-between items-center p-2 w-full 
+            bg-opacity-95 backdrop-blur-md
+            ${theme === "light" ? 'bg-white' : 'bg-black'}`}>
                 {/* Brand Logo and name */}
                 <Link to={"/"}>
                     <div className="flex justify-center items-center">
@@ -184,7 +189,7 @@ const NavBar = () => {
                             </div>
                         </div>
 
-                        <NavLink to={"/"}>
+                        <NavLink to={"/"}  onClick={handleNavClick}>
                     {({ isActive }) => (
                      <FillButton
                      theme={theme}
@@ -193,7 +198,7 @@ const NavBar = () => {
                      )}
                     </NavLink>
 
-                    <NavLink to={"/addTutorials"}>
+                    <NavLink to={"/addTutorials"} onClick={handleNavClick}>
 
                     {({ isActive }) => (
                      <FillButton
@@ -204,7 +209,7 @@ const NavBar = () => {
                      
                     </NavLink>
 
-                    <NavLink to={"/cards"}>
+                    <NavLink to={"/cards"}  onClick={handleNavClick}>
                     {({ isActive }) => (
                      <FillButton
                      theme={theme}
@@ -213,7 +218,7 @@ const NavBar = () => {
                      )}
                     </NavLink>
 
-                    <NavLink to={"/myTutorial/:email"}>
+                    <NavLink to={"/myTutorial/:email"}  onClick={handleNavClick}>
                     {({ isActive }) => (
                      <FillButton
                      theme={theme}
@@ -222,7 +227,7 @@ const NavBar = () => {
                      )}
                     </NavLink>
 
-                    <NavLink to={"/myBookedData/:email"}>
+                    <NavLink to={"/myBookedData/:email"}  onClick={handleNavClick}>
                     {({ isActive }) => (
                      <FillButton
                      theme={theme}

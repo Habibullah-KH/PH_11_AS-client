@@ -10,7 +10,7 @@ const Footer = () => {
        {/*Footer contact*/}
 
 <div
- className="absolute inset-0 bg-[url('/TPdoodle.png')] bg-center opacity-15 w-full pointer-events-none"
+ className="opacity-15 w-full "
  aria-hidden="true"
 ></div>
        <div className=" mt-5 text-center m-auto mb-5">
