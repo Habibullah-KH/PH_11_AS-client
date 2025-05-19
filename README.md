@@ -19,7 +19,7 @@ PolyLingua is an intuitive platform designed to connect users with skilled tutor
 - Leave reviews to help others make informed choices.  
 - Fully responsive design (mobile, tablet, and desktop).  
 
-[Project live link](https://github.com)
+# [🚀 Project live link](https://github.com)
 
 
 ## 🛠 Installation (Copy & Paste)
@@ -40,22 +40,22 @@ npm run dev
 
 
 
-##📦 Packages Used
-@eslint/js@9.17.0
-@types/react-dom@18.3.5
-@types/react@18.3.18
-@vitejs/plugin-react@4.3.4
-autoprefixer@10.4.20
-axios@1.7.9
-daisyui@4.12.23
-eslint-plugin-react-hooks@5.1.0
-firebase@11.1.0
-localforage@1.10.0
-match-sorter@8.0.0
-postcss@8.4.49
-react-router-dom@7.1.1
-react-spinners@0.15.0
-react-toastify@11.0.3
-swiper@11.2.0
-tailwindcss@3.4.17
-vite@6.0.7
+## 📦 Packages Used
+- @eslint/js@9.17.0
+- @types/react-dom@18.3.5
+- @types/react@18.3.18
+- @vitejs/plugin-react@4.3.4
+- autoprefixer@10.4.20
+- axios@1.7.9
+- daisyui@4.12.23
+- eslint-plugin-react-hooks@5.1.0
+- firebase@11.1.0
+- localforage@1.10.0
+- match-sorter@8.0.0
+- postcss@8.4.49
+- react-router-dom@7.1.1
+- react-spinners@0.15.0
+- react-toastify@11.0.3
+- swiper@11.2.0
+- tailwindcss@3.4.17
+- vite@6.0.7
