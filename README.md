@@ -13,11 +13,11 @@ PolyLingua is an intuitive platform designed to connect users with skilled tutor
 ---
 
 ## 🚀 Key Features
-✅ Browse tutors by language categories.  
-✅ View detailed tutor profiles (pricing, reviews, expertise).  
-✅ Book tutors securely with detailed session information.  
-✅ Leave reviews to help others make informed choices.  
-✅ Fully responsive design (mobile, tablet, and desktop).  
+- Browse tutors by language categories.  
+- View detailed tutor profiles (pricing, reviews, expertise).  
+- Book tutors securely with detailed session information.  
+- Leave reviews to help others make informed choices.  
+- Fully responsive design (mobile, tablet, and desktop).  
 
 [Project live link](https://github.com)
 
@@ -27,9 +27,16 @@ To get started with the project, follow these steps:
 
 ```bash
 git clone https://github.com/Habibullah-KH/PH_11_AS-client.git
+```
+```bash
 cd PH_11_AS-client
+```
+```bash
 npm install
+```
+```bash
 npm run dev
+```
 
 
 
